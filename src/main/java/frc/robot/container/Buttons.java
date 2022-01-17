@@ -5,7 +5,7 @@ package frc.robot.container;
  * 
  * @author <a href="https://github.com/4639RoboSpartans/2021-Beskar-LimeLight/blob/master/src/main/java/frc/robot/Constants.java">Team 4639</a>
  */
-public enum JoystickButtons {
+public enum Buttons {
 
     A_BUTTON(1), 
     B_BUTTON(2), 
@@ -20,7 +20,7 @@ public enum JoystickButtons {
 
     private int value;
 
-    private JoystickButtons(int value) {
+    private Buttons(int value) {
         this.value = value;
     }
 

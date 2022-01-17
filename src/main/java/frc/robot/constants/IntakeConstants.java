@@ -8,4 +8,6 @@ public class IntakeConstants {
 
     public static int MOTOR_DEVICE_ID;
 
+    public static int BALL_INTAKE_TIME = 2000;
+
 }

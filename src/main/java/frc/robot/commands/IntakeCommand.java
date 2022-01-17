@@ -1,7 +1,10 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.constants.IntakeConstants;
+import frc.robot.subsystems.IntakeDriverSubsystem;
 import frc.robot.util.Component;
+import frc.robot.util.Subsystem;
 
 /**
  * Intake Command
@@ -18,26 +21,38 @@ import frc.robot.util.Component;
  */
 public class IntakeCommand extends CommandBase implements Component {
 
+    @Subsystem
+    IntakeDriverSubsystem intakeDriverSubsystem;
+
+    int time = 0;
+
     @Override
-    public void constructor() {
-        
+    public void constructor() {}
+
+    @Override
+    public void initialize() {
+        time = 0;
+        intakeDriverSubsystem.setSpeed(0.75);
     }
 
-    /**
-     * 
-     */
     @Override
-    public void initialize() {}
+    public void execute() {
+        time += 20;
+    }
 
     @Override
-    public void execute() {}
-
-    @Override
-    public void end(boolean interrupted) {}
+    public void end(boolean interrupted) {
+        intakeDriverSubsystem.stopMotor();
+    }
 
     @Override
     public boolean isFinished() {
-        return false;
+        if (time >= IntakeConstants.BALL_INTAKE_TIME) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 }
