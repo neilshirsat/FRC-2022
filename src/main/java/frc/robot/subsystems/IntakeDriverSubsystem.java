@@ -62,6 +62,4 @@ public class IntakeDriverSubsystem extends SubsystemBase implements Component {
         this.setSpeed(0);
     }
 
-
-
 }

@@ -22,7 +22,7 @@ public class RetractIntakeCommand extends CommandBase implements Component {
             this.intakeSubsystem.setSolenoidValue(Value.kForward);
         }
         else {
-            this.intakeSubsystem.setSolenoidValue(Value.kOff);
+            this.intakeSubsystem.setSolenoidValue(Value.kReverse);
         }
     }
 

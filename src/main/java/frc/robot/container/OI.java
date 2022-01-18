@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
 import frc.robot.constants.OIConstants;
+import frc.robot.util.Service;
 
 /**
  * Controls the OI Layout of the
@@ -13,7 +14,7 @@ import frc.robot.constants.OIConstants;
  * @author Neil Shirsat
  * @author <a href="https://github.com/4639RoboSpartans/2021-Beskar-LimeLight/blob/master/src/main/java/frc/robot/Constants.java">Team 4639</a>
  */
-public class OI {
+public class OI implements Service {
     
     /**
      * Controls the Input Coming from the
