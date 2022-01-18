@@ -4,8 +4,10 @@
 
 package frc.robot.container;
 
+import edu.wpi.first.wpilibj.PS4Controller.Button;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.RetractIntakeCommand;
 import frc.robot.global.BallStore;
 import frc.robot.subsystems.IntakeDriverSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -25,6 +27,8 @@ public class RobotContainer {
 
     private CommandBase intakeCommand;
 
+    private CommandBase intakeRetractCommand;
+
     public RobotContainer() {
 
         this.componentFactory = new ComponentFactory();
@@ -41,6 +45,9 @@ public class RobotContainer {
 		
         intakeCommand = componentFactory.createCommand(IntakeCommand.class);
         oi.getButton(1, Buttons.B_BUTTON).whenPressed(intakeCommand);
+
+        intakeRetractCommand = componentFactory.createCommand(RetractIntakeCommand.class);
+        oi.getButton(1, Buttons.A_BUTTON);
 
 	}
 
