@@ -8,13 +8,14 @@ import frc.robot.util.Component;
 import frc.robot.util.Injectable;
 import frc.robot.util.Subsystem;
 
+/** @author Neil */
 public class DriveCommand extends CommandBase implements Component {
 
     @Subsystem
     DriveTrainSubsystem driveTrainSubsystem;
     
     @Injectable
-    OI oi;
+    OI oi; // what are these names?
 
     @Override
     public void constructor() {
@@ -22,18 +23,17 @@ public class DriveCommand extends CommandBase implements Component {
     }
 
     @Override
-    public void execute(){
+    public void execute() {
         this.driveTrainSubsystem.arcadeDrive(oi.getAxis(0, Axes.LEFT_STICK_Y), oi.getAxis(0, Axes.RIGHT_STICK_X));
     }
     
     @Override
-	public void end(boolean interrupted) {
-		this.driveTrainSubsystem.stop();
-	}
-
-	@Override
-	public boolean isFinished() {
-		return false;
-	}
-
+    public void end(boolean interrupted) {
+	this.driveTrainSubsystem.stop();
+    }
+	
+    @Override
+    public boolean isFinished() {
+	return false;
+    }
 }
